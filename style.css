@@ -278,3 +278,153 @@ nav.scrolled {
   color: #fd7b7b; /* Your portfolio brand accent */
   margin-bottom: 10px;
 }
+/* ========================= */
+/* Mobile Responsiveness */
+/* ========================= */
+
+/* Tablets (max-width: 992px) */
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .hero img {
+    max-width: 80%;
+    margin-top: 20px;
+  }
+
+  .skills-grid,
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact form {
+    max-width: 80%;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .hero {
+    padding: 40px 15px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .skills-grid,
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    padding: 15px;
+  }
+
+  .contact form {
+    max-width: 95%;
+    padding: 15px;
+  }
+}
+
+/* Extra small devices (max-width: 480px) */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero img {
+    max-width: 100%;
+  }
+
+  .skills h2,
+  .projects h2,
+  .contact h2 {
+    font-size: 1.8rem;
+  }
+}
+/* --- Global responsive image fix --- */
+img, picture, video, canvas {
+  max-width: 100%;
+  height: auto;          /* prevents 0-height issues on mobile */
+  display: block;
+}
+
+/* --- Projects / sliders --- */
+.project-slider {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;  /* gives the box a real height on phones */
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f3f3f3;
+  display: grid;
+  place-items: center;   /* keeps image centered */
+}
+.project-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* show full image, no crop */
+}
+
+/* --- Grid responsiveness --- */
+.project-grid,
+.skills-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* --- Navbar: avoid overflow on small screens --- */
+.navbar { flex-wrap: wrap; }
+.navbar .nav-links {
+  display: flex;
+  gap: 14px;
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+  .project-grid,
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+  .hero { padding: 48px 16px; text-align: left; }
+  .hero h1 { font-size: clamp(1.8rem, 8vw, 2.6rem); line-height: 1.1; }
+
+  .navbar .nav-links {
+    flex: 1 1 100%;
+    justify-content: space-between;
+    margin-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .project-card { padding: 16px; }
+  .projects h2, .skills h2, .contact h2 { font-size: 1.9rem; }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+  body { font-size: 14px; }
+  .hero h1 { font-size: clamp(1.6rem, 9vw, 2.2rem); }
+}
