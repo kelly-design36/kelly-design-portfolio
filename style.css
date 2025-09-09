@@ -496,3 +496,39 @@ img, picture, video, canvas {
     right: 20px; /* slides in */
   }
 }
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 50px;
+}
+
+/* Hero text */
+.hero-text {
+  max-width: 50%;
+}
+
+/* Hero image */
+.hero img {
+  max-width: 45%;
+  border-radius: 10px;
+}
+
+/* Mobile styles for Hero */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column; /* stack vertically */
+    text-align: center;     /* center text */
+    padding: 40px 20px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .hero img {
+    max-width: 90%;
+  }
+}
